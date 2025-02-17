@@ -44,13 +44,12 @@ function App() {
   return (
     <>
       <Description />
-      <ul className="btnList">
-        <Options onClick={() => updateFeedback("good")}>Good</Options>
-        <Options onClick={() => updateFeedback("neutral")}>Neutral</Options>
-        <Options onClick={() => updateFeedback("bad")}>Bad</Options>
 
-        {totalFeedback > 0 && <Options onClick={resetFeedback}>Reset</Options>}
-      </ul>
+      <Options
+        update={updateFeedback}
+        reset={resetFeedback}
+        total={totalFeedback}
+      />
 
       {totalFeedback ? (
         <Feedback
